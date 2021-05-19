@@ -7324,12 +7324,11 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-ignition",
-                "reference": "5f8f491cb5bface20d8be65e970615db8d538ccd"
+                "reference": "cd6f746cad08c4f9045fe598f2ec4486a553d3b4"
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "filp/whoops": "^2.4",
                 "illuminate/support": "^7.0|^8.0",
                 "monolog/monolog": "^2.0",
                 "php": "^7.4|^8.0",
@@ -7339,7 +7338,6 @@
                 "symfony/var-dumper": "^5.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.14",
                 "mockery/mockery": "^1.3",
                 "orchestra/testbench": "^5.0|^6.0",
                 "psalm/plugin-laravel": "^1.2",
