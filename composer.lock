@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "26fb6989f6654a483db7e4303b2257ba",
+    "content-hash": "6b010fdf6411f9241fd9c4c18392ac82",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -7203,7 +7203,7 @@
             "dist": {
                 "type": "path",
                 "url": "../flare-client-php",
-                "reference": "4a72079ae67466be76f06bed37bd27c0016b59d6"
+                "reference": "75f79bf25dfed8af0ca3d28f85b354cae31b8fb0"
             },
             "require": {
                 "illuminate/pipeline": "^8.0",
@@ -7265,18 +7265,81 @@
             }
         },
         {
-            "name": "spatie/ignition-contracts",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/ignition-contracts.git",
-                "reference": "229223621fc004b8962a090ff0e5e1b9aa82cb9b"
-            },
+            "name": "spatie/ignition",
+            "version": "dev-main",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/ignition-contracts/zipball/229223621fc004b8962a090ff0e5e1b9aa82cb9b",
-                "reference": "229223621fc004b8962a090ff0e5e1b9aa82cb9b",
-                "shasum": ""
+                "type": "path",
+                "url": "../ignition",
+                "reference": "5016c2dd5b2ef07c207b5db11a644e6954683854"
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "monolog/monolog": "^2.0",
+                "php": "^7.4|^8.0",
+                "spatie/flare-client-php": "dev-main",
+                "spatie/ignition-contracts": "^1.0.3",
+                "symfony/console": "^5.0",
+                "symfony/var-dumper": "^5.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3",
+                "phpunit/phpunit": "9.5.4",
+                "spatie/ray": "^1.17"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Ignition\\": "src"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\Ignition\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "psalm": [
+                    "vendor/bin/psalm"
+                ],
+                "format": [
+                    "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+                ],
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A beautiful error page for PHP applications.",
+            "homepage": "https://flareapp.io/ignition",
+            "keywords": [
+                "error",
+                "flare",
+                "laravel",
+                "page"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/ignition/issues",
+                "forum": "https://twitter.com/flareappio",
+                "source": "https://github.com/spatie/ignition",
+                "docs": "https://flareapp.io/docs/ignition-for-laravel/introduction"
+            },
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "spatie/ignition-contracts",
+            "version": "dev-main",
+            "dist": {
+                "type": "path",
+                "url": "../ignition-contracts",
+                "reference": "229223621fc004b8962a090ff0e5e1b9aa82cb9b"
             },
             "require": {
                 "php": "^7.4|^8.0"
@@ -7293,7 +7356,25 @@
                     "Spatie\\IgnitionContracts\\": "src"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "autoload-dev": {
+                "psr-4": {
+                    "Spatie\\IgnitionContracts\\Tests\\": "tests"
+                }
+            },
+            "scripts": {
+                "psalm": [
+                    "vendor/bin/psalm"
+                ],
+                "format": [
+                    "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+                ],
+                "test": [
+                    "vendor/bin/phpunit"
+                ],
+                "test-coverage": [
+                    "vendor/bin/phpunit --coverage-html coverage"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -7312,11 +7393,9 @@
                 "flare",
                 "ignition"
             ],
-            "support": {
-                "issues": "https://github.com/spatie/ignition-contracts/issues",
-                "source": "https://github.com/spatie/ignition-contracts/tree/1.0.3"
-            },
-            "time": "2021-05-19T09:49:35+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "spatie/laravel-ignition",
@@ -7324,7 +7403,7 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-ignition",
-                "reference": "cd6f746cad08c4f9045fe598f2ec4486a553d3b4"
+                "reference": "621c82a9e1e0852363c322a7feb35aa25ffff65e"
             },
             "require": {
                 "ext-json": "*",
@@ -7332,42 +7411,38 @@
                 "illuminate/support": "^7.0|^8.0",
                 "monolog/monolog": "^2.0",
                 "php": "^7.4|^8.0",
-                "spatie/flare-client-php": "^1.6",
-                "spatie/ignition-contracts": "^1.0.3",
+                "spatie/flare-client-php": "dev-main as 1.8",
+                "spatie/ignition": "dev-main as 1.8",
+                "spatie/ignition-contracts": "dev-main as 1.0.3",
+                "spatie/laravel-package-tools": "^1.9",
                 "symfony/console": "^5.0",
                 "symfony/var-dumper": "^5.0"
             },
             "require-dev": {
                 "mockery/mockery": "^1.3",
                 "orchestra/testbench": "^5.0|^6.0",
-                "psalm/plugin-laravel": "^1.2",
-                "spatie/laravel-ray": "^1.17"
-            },
-            "suggest": {
-                "laravel/telescope": "^3.1"
+                "psalm/plugin-laravel": "^1.4",
+                "spatie/laravel-ray": "^1.18"
             },
             "type": "library",
             "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                },
                 "laravel": {
                     "providers": [
-                        "Spatie\\Ignition\\IgnitionServiceProvider"
+                        "Spatie\\LaravelIgnition\\IgnitionServiceProvider"
                     ],
                     "aliases": {
-                        "Flare": "Spatie\\Ignition\\Facades\\Flare"
+                        "Flare": "Spatie\\LaravelIgnition\\Facades\\Flare"
                     }
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Spatie\\Ignition\\": "src"
+                    "Spatie\\LaravelIgnition\\": "src"
                 }
             },
             "autoload-dev": {
                 "psr-4": {
-                    "Spatie\\Ignition\\Tests\\": "tests"
+                    "Spatie\\LaravelIgnition\\Tests\\": "tests"
                 }
             },
             "scripts": {
@@ -7404,6 +7479,66 @@
             "transport-options": {
                 "relative": true
             }
+        },
+        {
+            "name": "spatie/laravel-package-tools",
+            "version": "1.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-package-tools.git",
+                "reference": "cf4c4cec220575e2864c6082842d76822421f1b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-package-tools/zipball/cf4c4cec220575e2864c6082842d76822421f1b1",
+                "reference": "cf4c4cec220575e2864c6082842d76822421f1b1",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^7.0|^8.0",
+                "mockery/mockery": "^1.4",
+                "php": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0|^6.0",
+                "phpunit/phpunit": "^9.3",
+                "spatie/test-time": "^1.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\LaravelPackageTools\\": "src",
+                    "Spatie\\LaravelPackageTools\\Database\\Factories\\": "database/factories"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Tools for creating Laravel packages",
+            "homepage": "https://github.com/spatie/laravel-package-tools",
+            "keywords": [
+                "laravel-package-tools",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-package-tools/issues",
+                "source": "https://github.com/spatie/laravel-package-tools/tree/1.9.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/spatie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-05-23T15:12:33+00:00"
         },
         {
             "name": "theseer/tokenizer",
@@ -7458,16 +7593,23 @@
     ],
     "aliases": [
         {
-            "package": "spatie/flare-client-php",
+            "package": "spatie/ignition",
             "version": "dev-main",
-            "alias": "1.8.0",
+            "alias": "1.8",
             "alias_normalized": "1.8.0.0"
+        },
+        {
+            "package": "spatie/ignition-contracts",
+            "version": "dev-main",
+            "alias": "1.0.3",
+            "alias_normalized": "1.0.3.0"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
         "spatie/laravel-ignition": 20,
-        "spatie/flare-client-php": 20
+        "spatie/ignition": 20,
+        "spatie/ignition-contracts": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
