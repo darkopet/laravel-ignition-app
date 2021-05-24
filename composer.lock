@@ -7673,7 +7673,7 @@
             "dist": {
                 "type": "path",
                 "url": "../flare-client-php",
-                "reference": "75f79bf25dfed8af0ca3d28f85b354cae31b8fb0"
+                "reference": "26468f88866f9437ef5cabad4b86dace8aaccb7a"
             },
             "require": {
                 "illuminate/pipeline": "^8.0",
@@ -7682,6 +7682,7 @@
                 "spatie/ignition-contracts": "^1.0.3",
                 "symfony/http-foundation": "^5.0",
                 "symfony/mime": "^5.2",
+                "symfony/process": "^5.2",
                 "symfony/var-dumper": "^5.2"
             },
             "require-dev": {
@@ -7740,7 +7741,7 @@
             "dist": {
                 "type": "path",
                 "url": "../ignition",
-                "reference": "5016c2dd5b2ef07c207b5db11a644e6954683854"
+                "reference": "45e6d385895598f76307ef61a9386d50f43d3de9"
             },
             "require": {
                 "ext-json": "*",
@@ -7873,12 +7874,12 @@
             "dist": {
                 "type": "path",
                 "url": "../laravel-ignition",
-                "reference": "621c82a9e1e0852363c322a7feb35aa25ffff65e"
+                "reference": "ceef6fdcdc91874c1ebf591d3ab90bec102009b1"
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "illuminate/support": "^7.0|^8.0",
+                "illuminate/support": "^8.0",
                 "monolog/monolog": "^2.0",
                 "php": "^7.4|^8.0",
                 "spatie/flare-client-php": "dev-main as 1.8",
