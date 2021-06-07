@@ -15,8 +15,9 @@
     },
     "require-dev": {
         "spatie/laravel-ignition": "dev-main",
-        "spatie/ignition": "dev-main as 1.8",
-        "spatie/ignition-contracts": "dev-main as 1.0.3",
+        "spatie/flare-client-php": "dev-main as 0.0.2",
+        "spatie/ignition": "dev-main as 0.0.1",
+        "spatie/ignition-contracts": "dev-main as 0.0.1",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
@@ -24,10 +25,6 @@
         "phpunit/phpunit": "^9.3.3"
     },
     "repositories": [
-        {
-            "type": "path",
-            "url": "../ignition-contracts"
-        },
         {
             "type": "path",
             "url": "../laravel-ignition"
