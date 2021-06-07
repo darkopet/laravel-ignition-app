@@ -8,7 +8,7 @@ class HomeController
 {
     public function __invoke()
     {
-        throw new Exception("Test");
+       throw new Exception('Bye world');
 
         return view('welcome');
     }
